@@ -128,7 +128,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .panel-title{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-dark-muted);margin-bottom:16px;display:flex;justify-content:space-between;align-items:center}
 .panel-title .hint{text-transform:none;letter-spacing:0;color:var(--on-dark-muted);font-size:.7rem}
 
-.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.method-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
 .method-btn{text-align:left;padding:13px 15px;border-radius:11px;border:1px solid var(--dark-line);background:var(--dark-3);transition:all .18s var(--ease)}
 .method-btn:hover{border-color:var(--on-dark-muted)}
 .method-btn.on{border-color:var(--accent-2);background:#2f2619;box-shadow:inset 0 0 0 1px var(--accent-2)}
@@ -195,23 +195,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .sound-toggle button.on i{left:20px;background:#1a1208}
 
 .steps{margin-top:20px;background:var(--dark-2);border:1px solid var(--dark-line);border-radius:14px;padding:8px}
-.step{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:16px 16px;border-radius:11px;transition:background .2s,box-shadow .2s;border:1px solid transparent}
-.step+.step{border-top:1px solid var(--dark-line);border-radius:0}
-.step.current{background:#2a2218;border:1px solid var(--accent-2);border-radius:11px;box-shadow:0 0 24px -6px rgba(201,138,60,.4)}
-.step.current+.step{border-top:1px solid transparent}
-.step-idx{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--on-dark-muted);width:22px}
-.step.current .step-idx{color:var(--accent-2)}
-.step-main .st{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:1.02rem;color:var(--on-dark)}
-.step-main .sn{font-size:.85rem;color:var(--on-dark-soft);margin-top:3px}
-.step-meta{display:flex;flex-direction:column;align-items:flex-end;gap:3px;font-family:"IBM Plex Mono",monospace}
-.step-meta .tg{font-size:.92rem;color:var(--accent-2);font-weight:500}
-.step-meta .dur{font-size:.68rem;color:var(--on-dark-muted)}
-.step-check{width:26px;height:26px;border-radius:8px;border:1.6px solid var(--on-dark-muted);background:transparent;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .18s}
-.step-check:hover{border-color:var(--accent-2)}
-.step-check.done{background:var(--accent-2);border-color:var(--accent-2)}
-.step-check svg{opacity:0;transition:opacity .15s;width:14px;height:14px}
-.step-check.done svg{opacity:1}
-.step.done-row .step-main .st{color:var(--on-dark-muted);text-decoration:line-through;text-decoration-color:var(--on-dark-muted)}
 
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
 .mcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .2s}
@@ -337,7 +320,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   .nav.open .nav-links a{padding:13px 8px;font-size:.9rem}
   .nav.open .nav-cta{display:block;margin-top:8px;text-align:center}
   .stepper-row{grid-template-columns:1fr}
-  .method-grid{grid-template-columns:1fr}
+  .method-grid{grid-template-columns:1fr 1fr}
   .flavor-grid{grid-template-columns:1fr}
   .gg-marks{height:240px}
   .foot-grid{grid-template-columns:1fr}
@@ -347,6 +330,118 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   .readouts{grid-template-columns:1fr}
   .rd:first-child{grid-column:auto}
   .hero-stats{gap:24px}
+}
+/* GRINDER SELECTOR */
+.grinder-row{margin-top:14px;border-top:1px solid var(--dark-line);padding-top:14px}
+.grinder-row .sk{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-muted);margin-bottom:8px;display:block}
+.grinder-sel{width:100%;padding:9px 12px;border-radius:9px;border:1px solid var(--dark-line);background:var(--dark-3);font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--on-dark);cursor:pointer;outline:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238C8275' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.grinder-sel:focus{border-color:var(--accent-2)}
+.grinder-out{display:flex;justify-content:space-between;align-items:center;margin-top:9px;padding:10px 13px;border-radius:9px;background:var(--dark-2);border:1px solid var(--dark-line)}
+.grinder-out .gk{font-family:"IBM Plex Mono",monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-muted)}
+.grinder-out .gv{font-family:"IBM Plex Mono",monospace;font-size:1.1rem;font-weight:600;color:var(--accent-2);transition:color .2s}
+.grinder-hint{font-family:"IBM Plex Mono",monospace;font-size:.58rem;color:var(--on-dark-muted);margin-top:6px;letter-spacing:.04em}
+
+/* BEAN SELECTION PANEL */
+.bean-section{margin-bottom:13px;padding-bottom:13px;border-bottom:1px solid var(--dark-line)}
+.bean-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.bean-label{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-muted);margin-bottom:7px;display:flex;justify-content:space-between;align-items:center}
+.bean-label .bl-tag{color:var(--accent-2);text-transform:none;letter-spacing:0;font-size:.66rem;font-weight:500}
+.bsel-row{display:flex;gap:6px}
+.bsel{flex:1;min-width:0;padding:8px 6px;border-radius:9px;border:1px solid var(--dark-line);background:var(--dark-3);font-family:"IBM Plex Mono",monospace;font-size:.66rem;color:var(--on-dark-soft);text-align:center;transition:all .15s var(--ease);line-height:1.3}
+.bsel:hover{border-color:var(--on-dark-muted);color:var(--on-dark)}
+.bsel.on{border-color:var(--accent-2);background:#2f2619;color:var(--on-dark)}
+.bsel .bsub{display:block;font-size:.52rem;color:var(--on-dark-muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bsel.on .bsub{color:var(--on-dark-muted)}
+.bean-intel{margin-top:13px;background:var(--dark-3);border:1px solid var(--dark-line);border-radius:11px;padding:13px}
+.bean-intel-head{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:.9rem;color:var(--accent-2);margin-bottom:7px}
+.bean-intel-desc{font-size:.82rem;color:var(--on-dark-soft);line-height:1.5;margin-bottom:9px}
+.bean-tag-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
+.btag{font-family:"IBM Plex Mono",monospace;font-size:.6rem;padding:3px 8px;border-radius:999px;border:1px solid var(--dark-line);color:var(--on-dark-soft)}
+.btag.hi{border-color:rgba(201,138,60,.4);color:var(--accent-2)}
+.bean-adj{font-family:"IBM Plex Mono",monospace;font-size:.62rem;color:var(--on-dark-muted);padding-top:8px;border-top:1px solid var(--dark-line)}
+.bean-adj b{color:var(--accent-2)}
+.cup-sep{border-top:1px solid var(--dark-line);margin:14px 0 12px}
+
+/* TEMP STEPPER ROW */
+.temp-row{margin-top:12px;padding-top:12px;border-top:1px solid var(--dark-line)}
+.temp-auto-tag{font-family:"IBM Plex Mono",monospace;font-size:.56rem;color:var(--accent-2);margin-left:5px;letter-spacing:.06em}
+.temp-auto-tag.manual{color:var(--on-dark-muted)}
+
+/* ENHANCED STEP LIST */
+.step{display:grid;grid-template-columns:28px 1fr auto auto;gap:14px;align-items:start;padding:18px 16px;border-radius:11px;transition:background .2s,box-shadow .2s;border:1px solid transparent}
+.step+.step{border-top:1px solid var(--dark-line);border-radius:0}
+.step.current{background:#2a2218;border:1px solid var(--accent-2);border-radius:11px;box-shadow:0 0 24px -6px rgba(201,138,60,.4)}
+.step.current+.step{border-top:1px solid transparent}
+.step-num{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--on-dark-muted);padding-top:3px}
+.step.current .step-num{color:var(--accent-2)}
+.step-body{min-width:0}
+.step-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:5px}
+.step-head .st{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:.98rem;color:var(--on-dark)}
+.step-head .dur{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--accent-2);font-weight:500;flex-shrink:0}
+.step-inst{font-size:.84rem;color:var(--on-dark-soft);line-height:1.52;margin-bottom:10px}
+.step-stimer{border-top:1px solid var(--dark-line);padding-top:9px}
+.stbar-track{height:3px;border-radius:3px;background:var(--dark-3);margin-bottom:8px;overflow:hidden}
+.stbar-fill{height:100%;border-radius:3px;background:var(--accent-2);width:0%;transition:width .28s linear}
+.stimer-ctrl{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.stimer-disp{font-family:"IBM Plex Mono",monospace;font-size:.78rem;color:var(--on-dark-soft);min-width:36px}
+.stimer-btn{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.05em;padding:5px 11px;border-radius:7px;border:1px solid var(--dark-line);background:var(--dark-2);color:var(--on-dark);transition:all .15s;white-space:nowrap}
+.stimer-btn:hover{border-color:var(--accent-2);color:var(--accent-2)}
+.stimer-btn.st-run{background:rgba(201,138,60,.15);border-color:var(--accent-2);color:var(--accent-2)}
+.stimer-btn.st-done{background:rgba(92,110,58,.2);border-color:var(--good);color:var(--good)}
+.step-tgt{font-family:"IBM Plex Mono",monospace;font-size:.86rem;color:var(--accent-2);font-weight:500;white-space:nowrap;padding-top:3px}
+.step.done-row .step-head .st{color:var(--on-dark-muted);text-decoration:line-through;text-decoration-color:var(--on-dark-muted)}
+.step.done-row .step-inst{color:var(--on-dark-muted)}
+.step.done-row .step-tgt{color:var(--on-dark-muted)}
+
+/* STEP-CHECK */
+.step-check{width:26px;height:26px;border-radius:8px;border:1.6px solid var(--on-dark-muted);background:transparent;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .18s;margin-top:2px}
+.step-check:hover{border-color:var(--accent-2)}
+.step-check.done{background:var(--accent-2);border-color:var(--accent-2)}
+.step-check svg{opacity:0;transition:opacity .15s;width:14px;height:14px}
+.step-check.done svg{opacity:1}
+
+/* SHARE BUTTON */
+.share-row{display:flex;justify-content:flex-end;margin-bottom:10px;margin-top:-4px}
+.share-btn{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.06em;padding:7px 14px;border-radius:8px;border:1px solid var(--dark-line);background:var(--dark-3);color:var(--on-dark-soft);transition:all .15s;display:flex;align-items:center;gap:6px}
+.share-btn:hover{border-color:var(--accent-2);color:var(--accent-2)}
+.share-btn.copied{border-color:var(--good);color:var(--good)}
+
+/* FRESHNESS INDICATOR */
+.freshness-row{margin-top:12px;padding-top:12px;border-top:1px solid var(--dark-line)}
+.freshness-row .sk{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-muted);margin-bottom:7px;display:flex;justify-content:space-between;align-items:center}
+.freshness-row .sk span{text-transform:none;letter-spacing:0;font-size:.62rem;color:var(--on-dark-muted);opacity:.7}
+.fresh-input{width:100%;padding:9px 12px;border-radius:9px;border:1px solid var(--dark-line);background:var(--dark-3);font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--on-dark);color-scheme:dark;outline:none}
+.fresh-input:focus{border-color:var(--accent-2)}
+.fresh-out{margin-top:8px;display:flex;align-items:flex-start;gap:9px;min-height:0;transition:opacity .2s}
+.fresh-out:empty{display:none}
+.fresh-tag{font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.06em;padding:4px 10px;border-radius:999px;border:1px solid;flex-shrink:0;margin-top:1px}
+.fresh-note{font-family:"IBM Plex Mono",monospace;font-size:.68rem;color:var(--on-dark-soft);line-height:1.5}
+
+/* TROUBLESHOOTER SECTION */
+.section--fix{background:var(--bg-2)}
+.fix-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:28px}
+.fix-btn{text-align:left;padding:16px 16px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);transition:all .18s var(--ease)}
+.fix-btn:hover{border-color:var(--ink);transform:translateY(-2px)}
+.fix-btn.on{border-color:var(--accent);background:rgba(168,85,31,.06)}
+.fix-btn .fb-icon{font-size:1.5rem;margin-bottom:6px;display:block}
+.fix-btn .fb-label{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:.94rem;color:var(--ink);display:block}
+.fix-btn .fb-hint{font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.04em;color:var(--muted);margin-top:3px;display:block}
+.fix-result{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(22px,3vw,34px);display:none}
+.fix-result.show{display:block;animation:slideIn .3s var(--ease)}
+.fix-result-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;gap:16px;flex-wrap:wrap}
+.fix-result-head h3{font-size:1.4rem}
+.fix-cause{font-size:.95rem;color:var(--ink-soft);padding:14px 16px;border-radius:10px;background:var(--bg-2);border-left:3px solid var(--accent);margin-bottom:20px;line-height:1.55}
+.fix-list{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+.fix-item{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+.fix-item-num{font-family:"IBM Plex Mono",monospace;font-size:.7rem;color:var(--muted);padding-top:3px;min-width:20px}
+.fix-item-body .fw{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:.94rem;color:var(--ink);margin-bottom:3px}
+.fix-item-body .fd{font-size:.86rem;color:var(--ink-soft);line-height:1.5}
+.fix-apply-btn{font-family:"IBM Plex Mono",monospace;font-size:.76rem;letter-spacing:.05em;padding:10px 18px;border-radius:9px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);transition:transform .15s,opacity .2s}
+.fix-apply-btn:hover{transform:translateY(-1px);opacity:.9}
+.fix-apply-btn:disabled{opacity:.4;cursor:default;transform:none}
+
+@media(max-width:760px){
+  .fix-grid{grid-template-columns:1fr 1fr}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
@@ -362,6 +457,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     <nav class="nav-links" aria-label="Primary">
       <a href="groundwork.html">Home</a>
       <a href="#lab" class="active">Brew Lab</a>
+      <a href="#fix">Troubleshoot</a>
       <a href="#methods">Methods</a>
       <a href="#beans">Beans</a>
       <a href="#grind">Grind</a>
@@ -387,7 +483,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
           <a href="#methods" class="ghost">Compare methods</a>
         </div>
         <div class="hero-stats">
-          <div class="st"><b>4</b><span>Brewers tuned</span></div>
+          <div class="st"><b>9</b><span>Brewers tuned</span></div>
           <div class="st"><b>5</b><span>Bitterness steps</span></div>
           <div class="st"><b>0.1g</b><span>Recipe resolution</span></div>
         </div>
@@ -421,6 +517,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     </div>
 
     <div class="console reveal">
+      <div class="share-row">
+        <button class="share-btn" id="shareBtn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          Share recipe
+        </button>
+      </div>
       <div class="readouts">
         <div class="rd">
           <div class="k">Grind setting</div>
@@ -440,8 +542,17 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
       <div class="console-grid">
         <div class="col-controls">
           <div class="panel">
-            <div class="panel-title">01 · Brewer</div>
+            <div class="panel-title">01 · Brewer &amp; Grinder</div>
             <div class="method-grid" id="methodGrid"></div>
+            <div class="grinder-row">
+              <span class="sk">Your grinder</span>
+              <select class="grinder-sel" id="grinderSel" aria-label="Grinder model"></select>
+              <div class="grinder-out">
+                <span class="gk">Set grind to</span>
+                <span class="gv" id="grinderVal">—</span>
+              </div>
+              <div class="grinder-hint">Adjusts automatically with bitterness &amp; brewer</div>
+            </div>
           </div>
           <div class="panel">
             <div class="panel-title">02 · Recipe <span class="hint" id="recipeHint">2 cups</span></div>
@@ -472,11 +583,46 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
               <button class="chip" data-cups="4">4</button>
               <span class="cl" style="margin-left:2px">cups</span>
             </div>
+            <div class="freshness-row">
+              <div class="sk">Roast date <span>(optional — unlocks freshness guide)</span></div>
+              <input type="date" class="fresh-input" id="roastDateInput" aria-label="Coffee roast date">
+              <div class="fresh-out" id="freshnessOut"></div>
+            </div>
+            <div class="temp-row">
+              <div class="stepper">
+                <div class="sk">Water temp <span class="temp-auto-tag" id="tempAutoTag">auto</span></div>
+                <div class="sctrl">
+                  <button class="bump" data-act="temp-" aria-label="Cooler">−</button>
+                  <span class="sval" id="tempVal">94°C</span>
+                  <button class="bump" data-act="temp+" aria-label="Hotter">+</button>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="panel">
-            <div class="panel-title">03 · Dial in the cup</div>
+            <div class="panel-title">03 · Bean &amp; Cup</div>
+
+            <div class="bean-section">
+              <div class="bean-label">Roast level <span class="bl-tag" id="roastTag">Medium</span></div>
+              <div class="bsel-row" id="roastGrid"></div>
+            </div>
+
+            <div class="bean-section">
+              <div class="bean-label">Origin <span class="bl-tag" id="originTag">Americas</span></div>
+              <div class="bsel-row" id="originBtnGrid"></div>
+            </div>
+
+            <div class="bean-section">
+              <div class="bean-label">Processing <span class="bl-tag" id="processTag">Washed</span></div>
+              <div class="bsel-row" id="processGrid"></div>
+            </div>
+
+            <div class="bean-intel" id="beanIntel"></div>
+
+            <div class="cup-sep"></div>
+
             <div class="dial">
-              <div class="dial-label"><span class="dl">Bitterness · strength of extraction</span><span class="dv" id="bitterTag">Balanced</span></div>
+              <div class="dial-label"><span class="dl">Extraction strength</span><span class="dv" id="bitterTag">Balanced</span></div>
               <div class="bitter-ctrl">
                 <span class="ends">Brighter</span>
                 <div class="notches" id="bitterNotches"></div>
@@ -484,7 +630,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
               </div>
             </div>
             <div class="dial">
-              <div class="dial-label"><span class="dl">Flavour profile</span></div>
+              <div class="dial-label"><span class="dl">Target notes</span></div>
               <div class="flavor-grid" id="flavorGrid"></div>
             </div>
             <div class="notes-line">Tasting toward → <b id="flavorNotes">caramel · brown sugar · round body · clean finish</b></div>
@@ -525,6 +671,18 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
       <div class="steps" id="stepsList"></div>
     </div>
+  </div>
+</section>
+
+<section class="section section--fix" id="fix">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Dial it in</span>
+      <h2>Something taste off?</h2>
+      <p class="lede">Pick the closest description. Get a specific diagnosis — what caused it and exactly what to change in your next brew.</p>
+    </div>
+    <div class="fix-grid reveal" id="fixGrid"></div>
+    <div class="fix-result reveal" id="fixResult"></div>
   </div>
 </section>
 
@@ -679,18 +837,33 @@ const clamp = (v,a,b)=> Math.max(a,Math.min(b,v));
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const METHODS = {
-  v60:{ id:'v60', name:'Hario V60', sub:'Cone · 02', ratio:16, temp:94, grind:46, bloomMult:2.5, bloomTime:45,
-        pours:[{to:0.60,sec:30,label:'First pour'},{to:1.00,sec:30,label:'Second pour'}], draw:50,
-        blurb:'Fast, clean, and bright — the cone rewards an even, central pour.' },
-  chemex:{ id:'chemex', name:'Chemex', sub:'Carafe · 6-cup', ratio:16.5, temp:95, grind:64, bloomMult:2.3, bloomTime:45,
-        pours:[{to:0.50,sec:35,label:'First pour'},{to:0.80,sec:30,label:'Second pour'},{to:1.00,sec:30,label:'Third pour'}], draw:70,
-        blurb:'A thick filter strips oils and fines for a crystalline, tea-like cup.' },
-  kalita:{ id:'kalita', name:'Kalita Wave', sub:'Flat · 185', ratio:16, temp:93, grind:54, bloomMult:2.4, bloomTime:40,
-        pours:[{to:0.55,sec:30,label:'First pour'},{to:1.00,sec:35,label:'Second pour'}], draw:60,
-        blurb:'A flat bed and three small holes even out flow — forgiving and repeatable.' },
-  origami:{ id:'origami', name:'Origami', sub:'Cone · S', ratio:15.5, temp:92, grind:48, bloomMult:2.5, bloomTime:40,
-        pours:[{to:0.60,sec:28,label:'First pour'},{to:1.00,sec:28,label:'Second pour'}], draw:45,
-        blurb:'Ribbed walls speed drawdown for a juicy, high-clarity cup.' }
+  v60:{       id:'v60',        name:'Hario V60',      sub:'Cone · 02',        ratio:16,   temp:94, grind:46, bloomMult:2.5, bloomTime:45,
+    pours:[{to:0.60,sec:30,label:'First pour'},{to:1.00,sec:30,label:'Second pour'}], draw:50,
+    blurb:'Fast, clean, and bright — the cone rewards an even, central pour.' },
+  chemex:{    id:'chemex',     name:'Chemex',         sub:'Carafe · 6-cup',   ratio:16.5, temp:95, grind:64, bloomMult:2.3, bloomTime:45,
+    pours:[{to:0.50,sec:35,label:'First pour'},{to:0.80,sec:30,label:'Second pour'},{to:1.00,sec:30,label:'Third pour'}], draw:70,
+    blurb:'A thick filter strips oils and fines for a crystalline, tea-like cup.' },
+  kalita:{    id:'kalita',     name:'Kalita Wave',    sub:'Flat · 185',       ratio:16,   temp:93, grind:54, bloomMult:2.4, bloomTime:40,
+    pours:[{to:0.55,sec:30,label:'First pour'},{to:1.00,sec:35,label:'Second pour'}], draw:60,
+    blurb:'A flat bed and three small holes even out flow — forgiving and repeatable.' },
+  origami:{   id:'origami',    name:'Origami',        sub:'Cone · S',         ratio:15.5, temp:92, grind:48, bloomMult:2.5, bloomTime:40,
+    pours:[{to:0.60,sec:28,label:'First pour'},{to:1.00,sec:28,label:'Second pour'}], draw:45,
+    blurb:'Ribbed walls speed drawdown for a juicy, high-clarity cup.' },
+  beehouse:{  id:'beehouse',   name:'Beehouse',       sub:'Cone · Small',     ratio:16,   temp:93, grind:50, bloomMult:2.4, bloomTime:40,
+    pours:[{to:0.55,sec:30,label:'First pour'},{to:1.00,sec:30,label:'Second pour'}], draw:55,
+    blurb:'Two-hole flat bottom slows the drain — more forgiving than a V60 with a similar cup.' },
+  clever:{    id:'clever',     name:'Clever Dripper', sub:'Hybrid · Immersion',ratio:16,  temp:93, grind:56, bloomMult:5,   bloomTime:30,
+    pours:[{to:1.00,sec:40,label:'Fill to full'}], draw:150,
+    blurb:'Valve keeps water in until you open it — immersion steeping meets pour-over filtration.' },
+  aeropress:{ id:'aeropress',  name:'AeroPress',      sub:'Immersion · Press', ratio:14,  temp:85, grind:52, bloomMult:3,   bloomTime:30,
+    pours:[{to:1.00,sec:30,label:'Add remaining water'}], draw:90,
+    blurb:'Steep then press through a filter. Fast, forgiving, and built for one strong cup.' },
+  frenchpress:{id:'frenchpress',name:'French Press',  sub:'Immersion · 8-cup', ratio:15, temp:94, grind:82, bloomMult:4,   bloomTime:30,
+    pours:[{to:1.00,sec:40,label:'Fill to full'}], draw:240,
+    blurb:'Full immersion with a metal mesh. Heavy-bodied, oily, and the boldest cup you can brew.' },
+  mokapot:{   id:'mokapot',    name:'Moka Pot',       sub:'Stovetop · 3-cup', ratio:7,    temp:88, grind:28, bloomMult:0,   bloomTime:0,
+    pours:[{to:1.00,sec:90,label:'Assemble & heat'}], draw:180,
+    blurb:'Steam pressure pushes water through fine grounds. Concentrated, bold, espresso-adjacent.' },
 };
 const FLAVORS = {
   fruity:   {id:'fruity', name:'Bright & Fruity',  grind:+5, temp:-1, time:-0.06, bloom:-3, notes:'berry · citrus · stone fruit · juicy acidity'},
@@ -699,7 +872,113 @@ const FLAVORS = {
   floral:   {id:'floral', name:'Floral & Tea-like', grind:+7, temp:-2, time:-0.04, bloom:-2, notes:'jasmine · black tea · delicate · silky'}
 };
 const BITTER_TAGS = ['Very bright','Bright','Balanced','Bold','Very bold'];
-const state = { methodId:'v60', dose:20, ratio:16, bitterness:0, flavorId:'balanced' };
+
+const ROAST_DATA = [
+  { id:'light',      name:'Light',     grind:+4, temp:-2,
+    desc:'Preserves the most origin character. Complex, delicate, and high in perceived acidity. Precision matters — a consistent grind and careful pour technique pay off here.',
+    tags:['origin-forward','high acidity','delicate','complex','bright'] },
+  { id:'medium',     name:'Medium',    grind:0,  temp:0,
+    desc:'Sweet spot between origin and roast character. Balanced acidity, approachable body, and wide margin of error. Works in almost any brewer.',
+    tags:['balanced','caramel','forgiving','versatile','sweet'] },
+  { id:'mediumdark', name:'Med-Dark',  grind:-4, temp:+2,
+    desc:'Roast character starts to take over from origin. Chocolate, toasted nuts, and lower acidity. Forgiving to brew — a bit coarser than people expect.',
+    tags:['chocolatey','low acidity','bold body','nutty','roasty'] },
+  { id:'dark',       name:'Dark',      grind:-7, temp:+3,
+    desc:'Dominant roast flavors — smoke, dark chocolate, and full body. Needs a coarser grind than most expect. Over-extraction bitterness stacks fast, so don\'t go too fine.',
+    tags:['smoky','dark choc','full body','bold','low acidity'] }
+];
+
+const ORIGIN_DATA = [
+  { id:'africa',   name:'Africa',         sub:'Ethiopia · Kenya · Rwanda',     grind:+3, temp:-1,
+    desc:'High-altitude East African beans tend toward vivid, complex flavors. Expect brightness — stone fruit, berries, florals, and a tea-like clarity. They shine at lighter roasts and lower temperatures.',
+    tags:['floral','fruity','bright acidity','berry','jasmine','tea-like'] },
+  { id:'americas', name:'Americas',        sub:'Colombia · Brazil · Guatemala', grind:0,  temp:0,
+    desc:'Central and South American coffees are the versatile middle ground. Caramel, chocolate, and gentle acidity at lighter roasts; deeper and nuttier as roast increases. Reliable across all methods.',
+    tags:['caramel','chocolate','balanced','stone fruit','nut','clean'] },
+  { id:'asiapac',  name:'Asia / Pacific',  sub:'Sumatra · Indonesia · PNG',     grind:-3, temp:+1,
+    desc:'Often wet-hulled, grown at lower altitudes. Earthy, herbal, and full-bodied with low acidity. Best at medium to dark roasts where the bold, complex character has room to breathe.',
+    tags:['earthy','herbal','full body','cedar','low acidity','tobacco'] }
+];
+
+const PROCESS_DATA = [
+  { id:'washed',  name:'Washed',      sub:'clean · transparent', grind:+2, temp:-1,
+    desc:'The fruit is fully removed before drying. Produces a clean, transparent cup where origin character shines clearly. Bright, defined acidity with crisp flavors.',
+    tags:['clean','bright','transparent','articulate','crisp'] },
+  { id:'honey',   name:'Honey',       sub:'sweet · smooth',      grind:0,  temp:0,
+    desc:'Partial fruit left on during drying — somewhere between washed and natural. Balanced sweetness, medium body, and approachable acidity. Less polarizing than a natural.',
+    tags:['sweet','smooth','medium body','balanced','approachable'] },
+  { id:'natural', name:'Natural',     sub:'fruity · funky',      grind:-2, temp:+1,
+    desc:'Coffee dried with the whole fruit intact. Bold, fruity, wine-like, and complex. Full body with lower perceived acidity. Can have a delightful funkiness — or veer into overripe territory.',
+    tags:['fruity','wine-like','funky','full body','complex','jammy'] }
+];
+
+const GRINDERS = [
+  { id:'generic',    name:'Generic / descriptive',     fmt:(p)=> grindLabel(p) },
+  { id:'comandante', name:'Comandante C40',             fmt:(p)=> Math.round(8 + p*0.28)+' clicks' },
+  { id:'fellow_ode', name:'Fellow Ode Gen 2',           fmt:(p)=> Math.max(1,Math.min(11,Math.round(1+p*0.1)))+' / 11' },
+  { id:'baratza',    name:'Baratza Encore / ESP',       fmt:(p)=> Math.round(4+p*0.36)+' / 40' },
+  { id:'timemore',   name:'Timemore C2 / C3 / Slim',   fmt:(p)=> Math.round(10+p*0.18)+' clicks' },
+  { id:'zpresso',    name:'1Zpresso JX / Q2 / K-Plus', fmt:(p)=> Math.round(15+p*0.20)+' clicks' },
+  { id:'niche',      name:'Niche Zero',                 fmt:(p)=> (Math.round((2+p*0.05)*10)/10).toFixed(1)+' / 7.0' },
+  { id:'df64',       name:'DF64 / Turin SD40 Plus',    fmt:(p)=> Math.round(2+p*0.07)+' / 9' },
+];
+
+const state = { methodId:'v60', dose:20, ratio:16, bitterness:0, flavorId:'balanced', grinderId:'generic', tempOverride:null, roast:'medium', origin:'americas', process:'washed' };
+
+const FIXES = [
+  { id:'bitter', icon:'😬', label:'Too bitter', hint:'harsh, dry, astringent',
+    why:'Over-extracted — the brew pulled too many harsh compounds from the grounds. Common with grind that\'s too fine, water that\'s too hot, or brew time that ran long.',
+    fixes:[
+      {w:'Grind coarser',d:'Larger particles slow extraction and cut bitterness fast. Try 2–3 steps coarser on your grinder and compare.'},
+      {w:'Lower water temp 2–4°C',d:'Heat drives extraction rate. Backing off reduces harsh over-extraction, especially pronounced on dark roasts.'},
+      {w:'Shorten total brew time',d:'Less contact time means less extraction. Aim 15–20 seconds shorter overall by grinding slightly coarser or pouring a touch faster.'},
+      {w:'Open the ratio to 1:17 or 1:18',d:'More water dilutes extraction strength. Keep dose the same and add 20–30g more water.'}
+    ],
+    apply:{bitterness:-1} },
+  { id:'sour', icon:'😬', label:'Too sour / sharp', hint:'acidic, thin, unbalanced',
+    why:'Under-extracted — not enough flavor was pulled from the grounds to balance out the acids. The coffee stopped short of its sweet compounds.',
+    fixes:[
+      {w:'Grind finer',d:'More surface area means faster, more complete extraction. Try 2 steps finer and see if the acidity becomes more pleasant and balanced.'},
+      {w:'Raise water temp 2–3°C',d:'Higher temp accelerates extraction and draws out balancing sweet and bitter compounds faster.'},
+      {w:'Extend your bloom time',d:'A thorough 45–60 second bloom lets CO₂ escape fully, which otherwise blocks even water penetration and causes uneven extraction.'},
+      {w:'Pour slower',d:'More contact time allows under-extracted acids to be balanced by sweetness. Take 10–15 more seconds on each pour.'}
+    ],
+    apply:{bitterness:+1} },
+  { id:'weak', icon:'😶', label:'Too weak / watery', hint:'thin, flat, dilute',
+    why:'The ratio of coffee to water is too low — the cup is dilute rather than under-extracted. Different problem from sour.',
+    fixes:[
+      {w:'Increase your dose',d:'Add 2–4g more coffee without changing the water amount. This is the fastest fix — even 2g makes a noticeable difference.'},
+      {w:'Tighten the ratio to 1:15',d:'Less water per gram of coffee produces a stronger, more concentrated cup without changing extraction quality.'},
+      {w:'Check your water temp',d:'Cold water tanks can drop temp significantly between kettle and cup. Even 5°C below target noticeably weakens extraction.'}
+    ],
+    apply:{dose:+2} },
+  { id:'strong', icon:'💥', label:'Too strong / intense', hint:'overpowering, heavy',
+    why:'Too much coffee relative to water, or the combination of dose and extraction is pushing the cup past what you enjoy.',
+    fixes:[
+      {w:'Open the ratio to 1:17 or 1:18',d:'More water dilutes strength without necessarily changing extraction character. Keep your dose and just add water.'},
+      {w:'Reduce dose by 2–4g',d:'If you want to keep brew time the same and just tame strength, pull back the dose.'},
+      {w:'Grind slightly coarser',d:'If it\'s strong AND bitter, you\'re over-extracting — coarser grind is the right lever, not the ratio.'}
+    ],
+    apply:{ratio:+1} },
+  { id:'flat', icon:'😑', label:'Flat & lifeless', hint:'no aroma, muted, dull',
+    why:'Almost always a bean freshness issue — either stale (past 30 days off roast) or too fresh (under 4 days, still off-gassing unevenly).',
+    fixes:[
+      {w:'Check roast date — enter it in Panel 02',d:'Ideal window is 4–14 days after roast. Older than 4 weeks and you\'ll notice significant flavor loss.'},
+      {w:'Store beans in an airtight container',d:'Away from light and heat — and not the fridge. Refrigeration causes condensation, which accelerates staling.'},
+      {w:'Grind finer',d:'Stale beans lose CO₂ and density, so they extract more slowly. A finer grind partially compensates.'},
+      {w:'Extend your bloom to 60 seconds',d:'Stale beans off-gas slowly. A longer bloom still helps even saturation before the main pour.'}
+    ],
+    apply:null },
+  { id:'muddy', icon:'🌊', label:'Muddy / silty', hint:'gritty, cloudy, heavy sediment',
+    why:'Fine particles (called \'fines\') are making it through or around the filter. Usually a grind, technique, or filter-seating issue.',
+    fixes:[
+      {w:'Grind coarser',d:'Fines are the dust-like particles at the bottom of your grind distribution. A coarser setting produces fewer of them.'},
+      {w:'Pour more gently',d:'Aggressive pouring agitates the bed and kicks up fines into the brew. A low gooseneck with slow, concentric pours keeps them settled.'},
+      {w:'Pre-rinse your filter with hot water',d:'A dry paper filter has larger, more open pores. Pre-rinsing swells the paper and improves filtration — pour that rinse water out before adding coffee.'},
+      {w:'Don\'t drain the last sip',d:'Fines sink to the bottom. Leaving the last 10–15ml in the cup keeps them out of your mouth.'}
+    ],
+    apply:null }
+];
 
 function grindLabel(p){
   if(p<=18) return 'Extra fine';
@@ -713,25 +992,31 @@ function fmt(sec){ sec=Math.round(sec); const m=Math.floor(sec/60), s=sec%60; re
 
 function compute(){
   const m = METHODS[state.methodId], f = FLAVORS[state.flavorId], b = state.bitterness;
-  const grindPos = clamp(m.grind - b*6 + f.grind, 8, 92);
-  const tempC = Math.round(clamp(m.temp + b*1.5 + f.temp, 84, 96));
+  const ro = ROAST_DATA.find(r=>r.id===state.roast)||ROAST_DATA[1];
+  const og = ORIGIN_DATA.find(o=>o.id===state.origin)||ORIGIN_DATA[1];
+  const pr = PROCESS_DATA.find(p=>p.id===state.process)||PROCESS_DATA[0];
+  const grindPos = clamp(m.grind - b*6 + f.grind + ro.grind + og.grind + pr.grind, 8, 92);
+  const autoTempC = Math.round(clamp(m.temp + b*1.5 + f.temp + ro.temp + og.temp + pr.temp, 80, 100));
+  const tempC = state.tempOverride !== null ? state.tempOverride : autoTempC;
   const timeFactor = 1 + b*0.06 + f.time;
   const totalWater = Math.round(state.dose * state.ratio);
   const bloomWater = Math.round(state.dose * m.bloomMult);
   const bloomTime = Math.max(20, Math.round(m.bloomTime + f.bloom + b*2));
+  const grinderObj = GRINDERS.find(g=>g.id===state.grinderId) || GRINDERS[0];
+  const grinderSetting = grinderObj.fmt(grindPos);
   const phases = [];
-  phases.push({ type:'bloom', title:'Bloom', target:bloomWater, sec:bloomTime,
-    note:`Saturate the grounds with ${bloomWater} g of water and let the coffee de-gas.` });
+  if(m.bloomMult > 0){
+    phases.push({ type:'bloom', title:'Bloom', target:bloomWater, sec:Math.max(20, bloomTime) });
+  }
   m.pours.forEach(p=>{
-    const target = Math.round(totalWater * p.to);
-    phases.push({ type:'pour', title:p.label, target, sec:Math.max(8,Math.round(p.sec*timeFactor)),
-      note:`Pour steadily in slow spirals up to ${target} g total.` });
+    const target = p.to > 0 ? Math.round(totalWater * p.to) : 0;
+    phases.push({ type:'pour', title:p.label, target, sec:Math.max(8,Math.round(p.sec*timeFactor)) });
   });
-  phases.push({ type:'draw', title:'Drawdown', target:totalWater, sec:Math.max(15,Math.round(m.draw*timeFactor)),
-    note:'Stop pouring. Let the bed drain fully and the dripper run dry.' });
+  const drawTitle = m.id==='aeropress'?'Press' : m.id==='frenchpress'?'Press & Decant' : m.id==='mokapot'?'Extract' : m.id==='clever'?'Open & Drain' : 'Drawdown';
+  phases.push({ type:'draw', title:drawTitle, target:totalWater, sec:Math.max(15,Math.round(m.draw*timeFactor)) });
   let acc=0; phases.forEach(p=>{ p.start=acc; acc+=p.sec; p.end=acc; });
-  return { grindPos, grindLabel:grindLabel(grindPos), tempC, tempF:Math.round(tempC*9/5+32),
-           totalWater, bloomWater, phases, totalTime:acc };
+  return { grindPos, grindLabel:grindLabel(grindPos), grinderSetting, tempC, autoTempC,
+           tempF:Math.round(tempC*9/5+32), totalWater, bloomWater, phases, totalTime:acc };
 }
 
 function flash(el){ if(reduceMotion||!el) return; el.classList.remove('rd-pulse'); void el.offsetWidth; el.classList.add('rd-pulse'); }
@@ -756,6 +1041,13 @@ function renderReadouts(prev){
   $('#specGrind').textContent = c.grindLabel;
   $('#specTemp').textContent = c.tempC+'°C';
   $('#specTime').textContent = fmt(c.totalTime);
+  // grinder setting
+  const gv=$('#grinderVal'); if(gv) gv.textContent=c.grinderSetting;
+  renderBeanIntel();
+  // temp stepper
+  const tv=$('#tempVal'); if(tv) tv.textContent=c.tempC+'°C';
+  const tag=$('#tempAutoTag');
+  if(tag){ tag.textContent=state.tempOverride!==null?'manual':'auto'; tag.classList.toggle('manual',state.tempOverride!==null); }
   if(prev){
     if(prev.grind!==c.grindLabel) flash($('#rdGrind'));
     if(prev.temp!==c.tempC) flash($('#rdTemp'));
@@ -768,23 +1060,92 @@ function snapshot(){ const c=compute(); return {grind:c.grindLabel,temp:c.tempC,
 
 let checked = [];
 let computed = compute();
+let stepTimers = [];
+
+function getStepInstruction(p, idx, c){
+  const m = METHODS[state.methodId], b = state.bitterness;
+  const bitter = b > 0 ? 'bolder' : b < 0 ? 'brighter' : null;
+  const pourTip = b > 1 ? ' Pour a touch slower to increase contact time.' : b < -1 ? ' Keep a brisk pace — shorter contact time preserves brightness.' : '';
+  if(p.type==='bloom'){
+    const lines = {
+      v60:`Pour ${p.target}g of hot water in a slow spiral from center outward. Keep the gooseneck low — saturate every gram of grounds. The coffee will swell and bubble as CO₂ escapes. Start your timer the moment water hits the grounds.`,
+      chemex:`Pre-wet the thick Chemex filter with hot water and pour off that rinse water before adding coffee. Then pour ${p.target}g in a steady inward spiral. The heavy filter will slow things down — the bloom time is especially important here.`,
+      kalita:`The flat bed means every part of the grounds needs to get wet. Pour ${p.target}g in a grid pattern, moving the kettle to cover the entire surface. Don't miss the edges.`,
+      origami:`The ribbed walls will accelerate drawdown later, so nail the bloom now for even extraction. Pour ${p.target}g in a spiral from center outward — same technique as a V60.`,
+      beehouse:`Pour ${p.target}g in a slow spiral from center outward. The two-hole bottom is more forgiving than a V60, so don't stress the pour pattern too much — coverage matters more than speed.`,
+      clever:`Close the valve (set the Clever on a flat surface, not on a cup). Pour ${p.target}g to bloom the grounds. The valve stays shut, so the water won't drain yet. Let the CO₂ escape for 30 seconds.`,
+      aeropress:`Set the AeroPress in inverted position with the plunger slightly inserted. Add coffee, then pour ${p.target}g to saturate the grounds. Stir once to ensure all grounds are wet. This short bloom makes a noticeable difference.`,
+      frenchpress:`Pour ${p.target}g of hot water over the grounds and give them a gentle stir to saturate everything. Even a brief bloom improves extraction consistency in a French press.`,
+      mokapot:`Fill the bottom chamber with hot (not cold) water up to just below the pressure valve. Hot water reduces bitterness by shortening heat exposure. Add grounds to the basket and level without tamping.`
+    };
+    return (lines[state.methodId]||`Pour ${p.target}g slowly to saturate all grounds evenly.`);
+  }
+  if(p.type==='pour'){
+    const lines = {
+      v60:`Pour in slow, steady concentric circles up to ${p.target}g total. Keep the gooseneck low and center the pour — don't hit the filter walls. Aim for an even, controlled rise of the water level.${pourTip}`,
+      chemex:`Pour gently and steadily to ${p.target}g, keeping the level well below the top of the filter. The thick Chemex filter controls most of the flow — your job is to add water at a consistent rate.${pourTip}`,
+      kalita:`Pour in tight circles over the center to ${p.target}g. The three small holes limit exit flow, making the Kalita Wave more forgiving than a V60. Consistent, measured pours matter more than pour speed.${pourTip}`,
+      origami:`Pour in spirals up to ${p.target}g. The ribbed walls create air channels that speed up the drain — don't let the bed run dry mid-pour. Keep a slightly brisker pace than you would on a V60.${pourTip}`,
+      beehouse:`Pour in concentric circles up to ${p.target}g. The two holes slow exit flow so you can pour a little faster without the bed running dry. Keep it even.${pourTip}`,
+      clever:`Pour the remaining water to ${p.target}g total. Place the lid on the Clever. The valve is still closed — the coffee is steeping. No need to rush this pour.`,
+      aeropress:`Pour the remaining water up to ${p.target}g. Stir gently 3–4 times. Place the AeroPress cap with a wet paper filter on top and press gently for 1–2 seconds just to seal it. Now steep until the timer hits the drawdown phase.`,
+      frenchpress:`Pour in the rest of the water to ${p.target}g and give it a slow stir to ensure even extraction. Set the lid on with the plunger pulled all the way up — do not press yet. Let it steep.`,
+      mokapot:`Assemble the basket into the bottom chamber and screw the top on firmly but not over-tight. Place on the stovetop over medium-low heat. Leave the lid open so you can watch the extraction.`
+    };
+    return (lines[state.methodId]||`Pour steadily in slow spirals to ${p.target}g total.`);
+  }
+  if(p.type==='draw'){
+    const endFmt = fmt(c.totalTime);
+    const lines = {
+      v60:`Stop pouring and step back. Let the V60 drain completely — a good drawdown leaves a flat, even bed with no visible cracks or channels. Target done by ${endFmt}. Too fast? Grind finer. Too slow? Go coarser.`,
+      chemex:`The thick filter means a slow drawdown — this is normal and intentional. It strips oils and fines for that characteristic Chemex clarity. Let it run until the last drop. Target done by ${endFmt}.`,
+      kalita:`The three small holes give a controlled, predictable drain. Let the bed dry completely — a flat, even surface means your pour was on point. Target done by ${endFmt}.`,
+      origami:`The ribbed walls accelerate the drawdown — this is why the Origami is so fast. Expect it to finish quickly. A flat, dry bed is a clean extraction. Target done by ${endFmt}.`,
+      beehouse:`Let the two holes do their work. Drawdown is slower than a V60 but faster than a Chemex. A flat, dry bed confirms even extraction. Target done by ${endFmt}.`,
+      clever:`Place the Clever on top of your cup — this opens the valve and drains the coffee through the paper filter. The filter removes fines for a clean cup with less silt than French press. Should drain in about 60–90 seconds.`,
+      aeropress:`After steeping, flip the AeroPress onto your cup in one smooth motion. Press down slowly and steadily — take about 25–35 seconds. Stop pressing when you hear a faint hissing sound. Don't squeeze the last drops.`,
+      frenchpress:`After steeping, press the plunger down slowly and evenly over about 30 seconds. Don't force it — steady pressure produces a cleaner result. Pour into your cup immediately and decant any remaining coffee so it doesn't keep extracting.`,
+      mokapot:`Coffee will begin flowing up into the top chamber. Watch for it — when it lightens in color and starts to sputter, remove from heat immediately. Over-extraction happens fast on a Moka pot. Pour right away.`
+    };
+    return (lines[state.methodId]||`Stop pouring. Let the coffee drain completely through the filter. Target done by ${fmt(c.totalTime)}.`);
+  }
+  return '';
+}
 
 function renderSteps(){
   computed = compute();
   const list = $('#stepsList');
   list.innerHTML = '';
   checked = computed.phases.map(()=>false);
+  stepTimers = computed.phases.map(p=>({ total:p.sec, remaining:p.sec, running:false, raf:null, last:0, done:false }));
+
   computed.phases.forEach((p,i)=>{
+    const tgt = p.type==='draw' ? 'Drain' : '→ '+p.target+'g';
+    const inst = getStepInstruction(p, i, computed);
     const row = document.createElement('div');
     row.className = 'step';
     row.id = 'step-'+i;
     row.innerHTML =
-      '<div class="step-idx">'+String(i+1).padStart(2,'0')+'</div>'+
-      '<div class="step-main"><div class="st">'+p.title+'</div><div class="sn">'+p.note+'</div></div>'+
-      '<div class="step-meta"><span class="tg">'+(p.type==='draw'?'hold':'→ '+p.target+'g')+'</span><span class="dur">'+p.sec+'s</span></div>'+
-      '<button class="step-check" aria-label="Mark '+p.title+' done" data-i="'+i+'">'+
+      '<div class="step-num">'+String(i+1).padStart(2,'0')+'</div>'+
+      '<div class="step-body">'+
+        '<div class="step-head"><span class="st">'+p.title+'</span><span class="dur">'+fmt(p.sec)+'</span></div>'+
+        '<div class="step-inst">'+inst+'</div>'+
+        '<div class="step-stimer">'+
+          '<div class="stbar-track"><div class="stbar-fill" id="sbar-'+i+'"></div></div>'+
+          '<div class="stimer-ctrl">'+
+            '<span class="stimer-disp" id="sdisp-'+i+'">'+fmt(p.sec)+'</span>'+
+            '<button class="stimer-btn" id="stbtn-'+i+'" data-i="'+i+'">▶ Step timer</button>'+
+          '</div>'+
+        '</div>'+
+      '</div>'+
+      '<div class="step-tgt">'+tgt+'</div>'+
+      '<button class="step-check" id="scheck-'+i+'" aria-label="Mark '+p.title+' done" data-i="'+i+'">'+
         '<svg viewBox="0 0 24 24" fill="none" stroke="#1a1208" stroke-width="3.2"><path d="M4 12l5 5L20 6"/></svg></button>';
     list.appendChild(row);
+  });
+
+  $$('.stimer-btn', list).forEach(btn=>{
+    btn.addEventListener('click', ()=>toggleStepTimer(+btn.dataset.i));
   });
   $$('.step-check', list).forEach(btn=>{
     btn.addEventListener('click', ()=>{
@@ -795,6 +1156,59 @@ function renderSteps(){
       $('#step-'+i).classList.toggle('done-row', checked[i]);
     });
   });
+}
+
+function toggleStepTimer(i){
+  if(timer.running) return; // main timer takes precedence
+  const st = stepTimers[i];
+  if(st.done){ resetStepTimer(i); return; }
+  if(st.running){
+    st.running = false;
+    if(st.raf) cancelAnimationFrame(st.raf);
+    const btn=$('#stbtn-'+i); if(btn){ btn.textContent='▶ Resume'; btn.className='stimer-btn'; }
+  } else {
+    initAudio();
+    st.last = 0; st.running = true;
+    const btn=$('#stbtn-'+i); if(btn){ btn.textContent='⏸ Pause'; btn.className='stimer-btn st-run'; }
+    function tickStep(now){
+      if(!st.running) return;
+      if(!st.last) st.last = now;
+      st.remaining -= (now - st.last)/1000;
+      st.last = now;
+      if(st.remaining <= 0){
+        st.remaining = 0; st.running = false; st.done = true;
+        updateStepTimerUI(i);
+        beep(660,0.12); setTimeout(()=>beep(880,0.16),140);
+        autoCheckStep(i);
+        return;
+      }
+      updateStepTimerUI(i);
+      st.raf = requestAnimationFrame(tickStep);
+    }
+    st.raf = requestAnimationFrame(tickStep);
+  }
+}
+function resetStepTimer(i){
+  const st = stepTimers[i];
+  if(st.raf) cancelAnimationFrame(st.raf);
+  const p = computed.phases[i];
+  st.remaining = p.sec; st.total = p.sec; st.running = false; st.done = false; st.last = 0;
+  updateStepTimerUI(i);
+  const btn=$('#stbtn-'+i); if(btn){ btn.textContent='▶ Step timer'; btn.className='stimer-btn'; }
+}
+function updateStepTimerUI(i){
+  const st = stepTimers[i];
+  const disp=$('#sdisp-'+i); if(disp) disp.textContent = fmt(Math.max(0,Math.ceil(st.remaining)));
+  const bar=$('#sbar-'+i);
+  if(bar) bar.style.width = (st.total>0 ? clamp((1-st.remaining/st.total)*100,0,100) : 0)+'%';
+  const btn=$('#stbtn-'+i);
+  if(btn && st.done){ btn.textContent='↺ Reset'; btn.className='stimer-btn st-done'; }
+}
+function autoCheckStep(i){
+  if(checked[i]) return;
+  checked[i] = true; autoChecked[i] = true;
+  const c=$('#scheck-'+i); if(c) c.classList.add('done');
+  const r=$('#step-'+i); if(r) r.classList.add('done-row');
 }
 
 let timer = { running:false, elapsed:0, raf:null, last:0, soundOn:true };
@@ -829,8 +1243,18 @@ function updateBrewUI(){
   ph.forEach((p,i)=>{
     if(t>=p.end && !autoChecked[i]){
       autoChecked[i]=true; checked[i]=true;
-      const c=$('#step-'+i+' .step-check'); if(c) c.classList.add('done');
+      const c=$('#scheck-'+i); if(c) c.classList.add('done');
       const r=$('#step-'+i); if(r) r.classList.add('done-row');
+    }
+    // sync per-step timer display with main timer while main is running
+    if(timer.running || t>0){
+      const st = stepTimers[i];
+      if(st && !st.running && !st.done){
+        const inPhase = t>=p.start && t<p.end;
+        const rem = inPhase ? Math.max(0, p.end - t) : (t<p.start ? p.sec : 0);
+        st.remaining = rem;
+        updateStepTimerUI(i);
+      }
     }
   });
   if(finished){
@@ -891,6 +1315,7 @@ function resetTimer(){
   checked = computed.phases.map(()=>false);
   $$('.step-check').forEach(c=>c.classList.remove('done'));
   $$('.step').forEach(s=>{s.classList.remove('current');s.classList.remove('done-row');});
+  computed.phases.forEach((_,i)=>{ if(stepTimers[i]) resetStepTimer(i); });
   $('#startBtn').textContent='Start';
   $('#nowPhase').textContent='Press start to begin';
   $('#nowInst').textContent='The brew runs as one timeline — bloom, pours, then drawdown. Steps tick off as the clock passes them.';
@@ -927,11 +1352,176 @@ function buildMethods(){
     b.innerHTML='<div class="mn">'+m.name+'</div><div class="md">'+m.sub+'</div>';
     b.addEventListener('click',()=>{
       const prev=snapshot();
-      state.methodId=m.id; state.ratio=METHODS[m.id].ratio;
+      state.methodId=m.id; state.ratio=METHODS[m.id].ratio; state.tempOverride=null;
       $$('.method-btn').forEach(x=>x.classList.toggle('on',x.dataset.method===m.id));
       renderReadouts(prev); renderSteps(); resetTimer();
     });
     grid.appendChild(b);
+  });
+}
+
+function renderBeanIntel(){
+  const card=$('#beanIntel'); if(!card) return;
+  const ro=ROAST_DATA.find(r=>r.id===state.roast)||ROAST_DATA[1];
+  const og=ORIGIN_DATA.find(o=>o.id===state.origin)||ORIGIN_DATA[1];
+  const pr=PROCESS_DATA.find(p=>p.id===state.process)||PROCESS_DATA[0];
+  // merge tags: first 2 from each, deduplicated
+  const seen=new Set(), merged=[];
+  [...og.tags.slice(0,3),...pr.tags.slice(0,2),...ro.tags.slice(0,2)].forEach(t=>{ if(!seen.has(t)){seen.add(t);merged.push(t);} });
+  const dG=ro.grind+og.grind+pr.grind, dT=ro.temp+og.temp+pr.temp;
+  const adjText=(dG!==0||dT!==0)
+    ? `Adjusted vs. baseline: grind <b>${dG>0?'+':''}${dG} steps</b>${dT!==0?`, temp <b>${dT>0?'+':''}${dT}°C</b>`:''}.`
+    : 'No recipe adjustments from baseline — using method defaults.';
+  card.innerHTML=
+    `<div class="bean-intel-head">${og.name} · ${pr.name} · ${ro.name} roast</div>`+
+    `<div class="bean-intel-desc">${og.desc.split('.')[0]}. ${pr.desc.split('.')[0]}.</div>`+
+    `<div class="bean-tag-row">${merged.map(t=>`<span class="btag${og.tags.includes(t)||pr.tags.includes(t)?'':' hi'}">${t}</span>`).join('')}</div>`+
+    `<div class="bean-adj">${adjText}</div>`;
+  $('#roastTag').textContent=ro.name;
+  $('#originTag').textContent=og.name;
+  $('#processTag').textContent=pr.name;
+}
+
+function renderFreshness(){
+  const el=$('#freshnessOut'); if(!el) return;
+  const val=$('#roastDateInput'); if(!val||!val.value){ el.innerHTML=''; return; }
+  const days=Math.floor((Date.now()-new Date(val.value).getTime())/86400000);
+  if(days<0){ el.innerHTML='<span class="fresh-note" style="color:var(--on-dark-muted)">Roast date is in the future.</span>'; return; }
+  let tag,col,note;
+  if(days<=3){
+    tag='Too fresh'; col='#7B9DC4';
+    note=`${days}d off roast — beans are still off-gassing heavily. Bloom will be very active and extraction can be uneven. Wait 2–3 more days if possible.`;
+  } else if(days<=14){
+    tag='Prime window'; col='var(--good)';
+    note=`${days}d off roast — this is the sweet spot. Expect a lively bloom and clean, even extraction. Brew with confidence.`;
+  } else if(days<=30){
+    tag='Getting stale'; col='var(--accent-2)';
+    note=`${days}d off roast — past peak but still enjoyable. Grind a touch finer and extend bloom by 5–10s to compensate for slower off-gassing.`;
+  } else if(days<=60){
+    tag='Stale'; col='var(--accent)';
+    note=`${days}d off roast — noticeably past prime. Grind finer, extend bloom to 60s, and expect muted flavors. Better suited to milk drinks or espresso.`;
+  } else {
+    tag='Very stale'; col='#A0522D';
+    note=`${days}d off roast — significantly degraded. Replace when you can. Grind much finer and use higher extraction settings to pull anything out.`;
+  }
+  el.innerHTML=`<span class="fresh-tag" style="background:${col}22;border-color:${col}55;color:${col}">${tag}</span><span class="fresh-note">${note}</span>`;
+}
+
+let activeFix=null;
+function buildFixer(){
+  const grid=$('#fixGrid'); if(!grid) return;
+  FIXES.forEach(f=>{
+    const b=document.createElement('button');
+    b.className='fix-btn'; b.dataset.id=f.id;
+    b.innerHTML=`<span class="fb-icon">${f.icon}</span><span class="fb-label">${f.label}</span><span class="fb-hint">${f.hint}</span>`;
+    b.addEventListener('click',()=>{
+      const same=activeFix===f.id;
+      activeFix=same?null:f.id;
+      $$('.fix-btn').forEach(x=>x.classList.toggle('on',x.dataset.id===activeFix));
+      renderFixResult(same?null:f);
+    });
+    grid.appendChild(b);
+  });
+}
+function renderFixResult(f){
+  const el=$('#fixResult'); if(!el) return;
+  if(!f){ el.classList.remove('show'); return; }
+  const hasApply=!!f.apply;
+  el.innerHTML=
+    `<div class="fix-result-head"><h3>${f.label}</h3>`+
+    (hasApply?`<button class="fix-apply-btn" id="fixApplyBtn">Apply to recipe →</button>`:'')+
+    `</div>`+
+    `<div class="fix-cause">${f.why}</div>`+
+    `<div class="fix-list">${f.fixes.map((x,i)=>
+      `<div class="fix-item"><div class="fix-item-num">${i+1}.</div><div class="fix-item-body"><div class="fw">${x.w}</div><div class="fd">${x.d}</div></div></div>`
+    ).join('')}</div>`;
+  el.classList.add('show');
+  if(hasApply){
+    $('#fixApplyBtn').addEventListener('click',()=>{
+      const prev=snapshot();
+      if(f.apply.bitterness!==undefined) state.bitterness=clamp(state.bitterness+f.apply.bitterness,-2,2);
+      if(f.apply.dose!==undefined) state.dose=clamp(state.dose+f.apply.dose,10,60);
+      if(f.apply.ratio!==undefined) state.ratio=clamp(Math.round((state.ratio+f.apply.ratio)*2)/2,13,20);
+      state.tempOverride=null;
+      $$('.notch').forEach(x=>x.classList.toggle('on',+x.dataset.b===state.bitterness));
+      renderReadouts(prev); renderSteps(); resetTimer();
+      const btn=$('#fixApplyBtn');
+      if(btn){ btn.textContent='Applied ✓'; btn.disabled=true; }
+      // scroll back to lab
+      document.querySelector('#lab').scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  }
+}
+
+function initShareLink(){
+  // Restore from URL params on load
+  const p=new URLSearchParams(location.search);
+  if(p.has('method')&&METHODS[p.get('method')]){
+    state.methodId=p.get('method');
+    state.ratio=+p.get('ratio')||METHODS[state.methodId].ratio;
+    state.dose=clamp(+p.get('dose')||20,10,60);
+    state.bitterness=clamp(+(p.get('bitter')||0),-2,2);
+    if(FLAVORS[p.get('flavor')]) state.flavorId=p.get('flavor');
+    if(ROAST_DATA.find(r=>r.id===p.get('roast'))) state.roast=p.get('roast');
+    if(ORIGIN_DATA.find(o=>o.id===p.get('origin'))) state.origin=p.get('origin');
+    if(PROCESS_DATA.find(pr=>pr.id===p.get('process'))) state.process=p.get('process');
+    if(GRINDERS.find(g=>g.id===p.get('grinder'))) state.grinderId=p.get('grinder');
+    if(p.has('temp')) state.tempOverride=clamp(+p.get('temp'),80,100);
+  }
+  // Share button
+  const btn=$('#shareBtn'); if(!btn) return;
+  btn.addEventListener('click',()=>{
+    const params=new URLSearchParams({
+      method:state.methodId, dose:state.dose, ratio:state.ratio,
+      bitter:state.bitterness, flavor:state.flavorId,
+      roast:state.roast, origin:state.origin, process:state.process,
+      grinder:state.grinderId,
+      ...(state.tempOverride!==null?{temp:state.tempOverride}:{})
+    });
+    const base=location.href.split('?')[0].split('#')[0];
+    const url=base+'?'+params.toString()+'#lab';
+    navigator.clipboard.writeText(url).then(()=>{
+      btn.textContent='Copied!'; btn.classList.add('copied');
+      setTimeout(()=>{ btn.innerHTML='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Share recipe'; btn.classList.remove('copied'); },2200);
+    }).catch(()=>{ prompt('Copy this recipe link:',url); });
+  });
+}
+
+function buildBeanSelection(){
+  function makeBtns(containerId, dataset, stateKey, tagId){
+    const wrap=$(containerId); if(!wrap) return;
+    dataset.forEach(d=>{
+      const b=document.createElement('button');
+      b.className='bsel'+(state[stateKey]===d.id?' on':'');
+      b.dataset.id=d.id;
+      b.innerHTML=d.name+(d.sub?`<span class="bsub">${d.sub}</span>`:'');
+      b.addEventListener('click',()=>{
+        const prev=snapshot();
+        state[stateKey]=d.id; state.tempOverride=null;
+        wrap.querySelectorAll('.bsel').forEach(x=>x.classList.toggle('on',x.dataset.id===d.id));
+        renderReadouts(prev); renderSteps(); resetTimer();
+      });
+      wrap.appendChild(b);
+    });
+  }
+  makeBtns('#roastGrid',    ROAST_DATA,   'roast',   '#roastTag');
+  makeBtns('#originBtnGrid',ORIGIN_DATA,  'origin',  '#originTag');
+  makeBtns('#processGrid',  PROCESS_DATA, 'process', '#processTag');
+  renderBeanIntel();
+}
+
+function buildGrinders(){
+  const sel=$('#grinderSel'); if(!sel) return;
+  GRINDERS.forEach(g=>{
+    const o=document.createElement('option');
+    o.value=g.id; o.textContent=g.name;
+    sel.appendChild(o);
+  });
+  sel.value=state.grinderId;
+  sel.addEventListener('change',()=>{
+    state.grinderId=sel.value;
+    const c=compute();
+    const gv=$('#grinderVal'); if(gv) gv.textContent=c.grinderSetting;
   });
 }
 function buildBitter(){
@@ -942,7 +1532,7 @@ function buildBitter(){
     n.dataset.b=i; n.setAttribute('aria-label','Bitterness level '+(i+3)+' of 5');
     n.addEventListener('click',()=>{
       const prev=snapshot();
-      state.bitterness=i;
+      state.bitterness=i; state.tempOverride=null;
       $$('.notch').forEach(x=>x.classList.toggle('on',+x.dataset.b===i));
       renderReadouts(prev); renderSteps(); resetTimer();
     });
@@ -974,7 +1564,13 @@ function wireSteppers(){
       if(a==='dose+') state.dose=clamp(state.dose+2,10,60);
       if(a==='ratio-') state.ratio=clamp(Math.round((state.ratio-0.5)*2)/2,13,18);
       if(a==='ratio+') state.ratio=clamp(Math.round((state.ratio+0.5)*2)/2,13,18);
-      renderReadouts(prev); renderSteps(); resetTimer();
+      if(a==='temp-'||a==='temp+'){
+        const base = state.tempOverride!==null ? state.tempOverride : compute().autoTempC;
+        state.tempOverride = clamp(base+(a==='temp+'?1:-1),80,100);
+      }
+      renderReadouts(prev);
+      if(a!=='temp-'&&a!=='temp+') renderSteps();
+      resetTimer();
     });
   });
   $$('.chip[data-cups]').forEach(c=>{
@@ -1133,7 +1729,9 @@ function buildGlossary(){
   });
 }
 
-let journal=[];
+function loadJournal(){ try{ return JSON.parse(localStorage.getItem('sg_journal')||'[]'); }catch(e){ return []; } }
+function saveJournal(){ try{ localStorage.setItem('sg_journal',JSON.stringify(journal)); }catch(e){} }
+let journal=loadJournal();
 let jScore=0;
 function buildJournal(){
   const sel=$('#jMethod');
@@ -1158,6 +1756,7 @@ function buildJournal(){
       date:new Date().toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'})
     };
     journal.unshift(entry);
+    saveJournal();
     renderJournal();
     e.target.reset(); jScore=0; $$('#jRate button').forEach(x=>x.classList.remove('on'));
     $('#jCoffee').focus();
@@ -1187,7 +1786,7 @@ function renderJournal(){
       '<button class="jdel" data-i="'+i+'">Remove</button>';
     list.appendChild(el);
   });
-  $$('.jdel').forEach(b=>b.addEventListener('click',()=>{ journal.splice(+b.dataset.i,1); renderJournal(); }));
+  $$('.jdel').forEach(b=>b.addEventListener('click',()=>{ journal.splice(+b.dataset.i,1); saveJournal(); renderJournal(); }));
 }
 function escapeHtml(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
@@ -1200,7 +1799,7 @@ function wireNav(){
   $$('.nav-links a, .nav.open .nav-cta').forEach(a=>a.addEventListener('click',()=>{
     nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false');
   }));
-  const ids=['lab','methods','beans','grind','tasting','glossary','journal'];
+  const ids=['lab','fix','methods','beans','grind','tasting','glossary','journal'];
   const sections=ids.map(id=>$('#'+id)).filter(Boolean);
   const obs=new IntersectionObserver(entries=>{
     entries.forEach(en=>{
@@ -1219,24 +1818,12 @@ function wireReveal(){
   },{rootMargin:'0px 0px -10% 0px',threshold:0.08});
   $$('.reveal').forEach(el=>obs.observe(el));
 }
-function heroTicker(){
-  if(reduceMotion) return;
-  const card=$('#specCard');
-  const ids=Object.keys(METHODS); let i=0;
-  setInterval(()=>{
-    if(timer.running) return;
-    i=(i+1)%ids.length;
-    const prev=snapshot();
-    state.methodId=ids[i]; state.ratio=METHODS[ids[i]].ratio;
-    $$('.method-btn').forEach(x=>x.classList.toggle('on',x.dataset.method===ids[i]));
-    renderReadouts(prev); renderSteps(); resetTimer();
-    if(card){ card.style.opacity='0.55'; setTimeout(()=>card.style.opacity='1',180); }
-  },5200);
-}
 
 function init(){
-  buildMethods(); buildBitter(); buildFlavors(); wireSteppers();
+  initShareLink();
+  buildMethods(); buildGrinders(); buildBeanSelection(); buildBitter(); buildFlavors(); wireSteppers();
   buildMethodCards(); buildOrigins(); buildGrindGuide(); buildTaste(); buildGlossary(); buildJournal();
+  buildFixer();
   renderReadouts(null); renderSteps(); resetTimer();
   $('#startBtn').addEventListener('click',startPause);
   $('#resetBtn').addEventListener('click',resetTimer);
@@ -1245,7 +1832,18 @@ function init(){
     this.setAttribute('aria-checked',timer.soundOn?'true':'false');
     if(timer.soundOn){ initAudio(); beep(660,0.1); }
   });
-  wireNav(); wireReveal(); heroTicker();
+  // Roast date / freshness
+  const rdi=$('#roastDateInput');
+  if(rdi){
+    // Restore saved roast date
+    const saved=localStorage.getItem('sg_roastdate');
+    if(saved){ rdi.value=saved; renderFreshness(); }
+    rdi.addEventListener('change',()=>{
+      localStorage.setItem('sg_roastdate',rdi.value);
+      renderFreshness();
+    });
+  }
+  wireNav(); wireReveal();
 }
 if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
 })();
