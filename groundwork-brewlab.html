@@ -9,12 +9,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F5F4F2;--bg-2:#ECEAE7;--surface:#FFFFFF;--ink:#0A0908;--ink-soft:#2E2820;
-  --muted:#8A837C;--line:rgba(10,9,8,0.09);--line-soft:rgba(10,9,8,0.04);
-  --accent:#7C3A22;--accent-2:#B8762A;--accent-gold:#D4A857;--good:#3A5C30;
-  --dark:#070605;--dark-2:#0D0C0A;--dark-3:#161410;
-  --dark-line:rgba(245,244,242,0.09);--on-dark:#EDE8DF;
-  --on-dark-soft:#BCB3A8;--on-dark-muted:#78706A;
+  --bg:#0C0B09;--bg-2:#161310;--surface:#1E1B17;--ink:#EDE7DC;--ink-soft:#B8AD9C;
+  --muted:#68605A;--line:rgba(237,231,220,0.11);--line-soft:rgba(237,231,220,0.06);
+  --accent:#C07840;--accent-2:#E8A84A;--accent-gold:#F2D090;--good:#6A9060;
+  --dark:#030201;--dark-2:#070605;--dark-3:#0C0B09;
+  --dark-line:rgba(237,231,220,0.08);--on-dark:#EDE7DC;
+  --on-dark-soft:#B8AD9C;--on-dark-muted:#68605A;
   --r:10px;--container:1180px;--ease:cubic-bezier(.22,.61,.36,1);
 }
 *{box-sizing:border-box}
@@ -44,7 +44,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .reveal.in{opacity:1;transform:none}
 
 /* NAV */
-.nav{position:sticky;top:0;z-index:60;background:rgba(245,244,242,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{position:sticky;top:0;z-index:60;background:rgba(12,11,9,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-inner{max-width:var(--container);margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:baseline;gap:.5ch;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.18rem;letter-spacing:.02em}
 .brand .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;transform:translateY(-1px)}
@@ -198,7 +198,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
 .mcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .2s}
-.mcard:hover{transform:translateY(-4px);box-shadow:0 24px 44px -28px rgba(26,23,20,.4);border-color:var(--ink)}
+.mcard:hover{transform:translateY(-4px);box-shadow:0 0 40px -8px rgba(192,120,64,0.2),0 4px 24px -8px rgba(0,0,0,0.7);border-color:var(--ink)}
 .mcard .top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
 .mcard h3{font-size:1.35rem}
 .mcard .tag{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
@@ -513,7 +513,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;o
 
 /* ── PANEL HOVER LIFT ── */
 .panel{transition:box-shadow .22s var(--ease)}
-.panel:hover{box-shadow:0 4px 24px -8px rgba(0,0,0,0.22)}
+.panel:hover{box-shadow:0 0 28px -6px rgba(192,120,64,0.16),0 4px 16px -6px rgba(0,0,0,0.5)}
 
 /* ── FIX BUTTON HOVER SLIDE ── */
 .fix-btn{overflow:hidden;position:relative}
@@ -525,6 +525,20 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;o
 
 /* ── PILL / CHIP HOVER ── */
 .pill,.chip,.fam{transition:all .18s var(--ease)}
+
+.hero-pour{position:absolute;left:clamp(-50px,-5vw,0px);top:50%;transform:translateY(-56%);width:clamp(170px,20vw,260px);pointer-events:none;opacity:.78}
+.hero-pour svg{width:100%;height:auto}
+@keyframes hpour-flow{0%,8%{stroke-dashoffset:80;opacity:0}18%{opacity:1}72%{stroke-dashoffset:0;opacity:1}88%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes hpour-drip{0%,38%{transform:translateY(0);opacity:0}48%{opacity:.9}88%{transform:translateY(26px);opacity:0}100%{transform:translateY(0);opacity:0}}
+@keyframes hpour-ks{0%{opacity:0;transform:translateY(4px)}28%{opacity:.7}95%{opacity:0;transform:translateY(-22px) scaleX(1.4)}}
+@keyframes hpour-float{0%,100%{transform:translateY(-56%)}50%{transform:translateY(calc(-56% - 10px))}}
+.hpour-stream{animation:hpour-flow 3.8s ease-in-out infinite}
+.hpour-d1{animation:hpour-drip 3.8s ease-in 0.4s infinite}
+.hpour-d2{animation:hpour-drip 3.8s ease-in 1.9s infinite}
+.hpour-ks1{animation:hpour-ks 2.5s ease-in-out infinite}
+.hpour-ks2{animation:hpour-ks 2.5s ease-in-out .9s infinite}
+.hero-pour{animation:hpour-float 7s ease-in-out infinite}
+@media(max-width:700px){.hero-pour{display:none}}
 </style>
 </head>
 <body>
@@ -583,6 +597,24 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;o
         </div>
       </div>
     </div>
+    <div class="hero-pour" aria-hidden="true">
+  <svg viewBox="0 0 200 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="106" y="28" width="60" height="40" rx="8" stroke="rgba(232,168,74,0.55)" stroke-width="1.5" fill="rgba(24,21,18,0.6)"/>
+    <path d="M106 44 Q84 44 72 72" stroke="rgba(232,168,74,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M166 32 Q188 32 188 48 Q188 64 166 64" stroke="rgba(232,168,74,0.4)" stroke-width="1.5"/>
+    <path class="hpour-stream" d="M72 72 Q64 106 72 138" stroke="rgba(140,195,230,0.75)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="80"/>
+    <path d="M36 140 L72 218 L108 140 Z" stroke="rgba(192,120,64,0.6)" stroke-width="1.5" fill="rgba(16,14,11,0.55)"/>
+    <line x1="52" y1="156" x2="72" y2="208" stroke="rgba(192,120,64,0.28)" stroke-width="1"/>
+    <line x1="72" y1="150" x2="72" y2="208" stroke="rgba(192,120,64,0.28)" stroke-width="1"/>
+    <line x1="92" y1="156" x2="72" y2="208" stroke="rgba(192,120,64,0.28)" stroke-width="1"/>
+    <rect x="42" y="220" width="60" height="36" rx="5" stroke="rgba(192,120,64,0.45)" stroke-width="1.5" fill="rgba(16,14,11,0.5)"/>
+    <ellipse cx="72" cy="220" rx="22" ry="4" fill="rgba(120,70,30,0.15)" stroke="rgba(192,120,64,0.2)" stroke-width="1"/>
+    <circle class="hpour-d1" cx="72" cy="222" r="3.5" fill="rgba(160,90,40,0.8)" opacity="0"/>
+    <circle class="hpour-d2" cx="72" cy="222" r="3.5" fill="rgba(160,90,40,0.8)" opacity="0"/>
+    <path class="hpour-ks1" d="M128 26 C124 16 132 6 128 -4" stroke="rgba(242,208,144,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+    <path class="hpour-ks2" d="M142 24 C146 14 138 4 142 -6" stroke="rgba(242,208,144,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+</div>
   </div>
 </section>
 

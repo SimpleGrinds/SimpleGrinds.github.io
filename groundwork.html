@@ -9,12 +9,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F5F4F2;--bg-2:#ECEAE7;--surface:#FFFFFF;--ink:#0A0908;--ink-soft:#2E2820;
-  --muted:#8A837C;--line:rgba(10,9,8,0.09);--line-soft:rgba(10,9,8,0.04);
-  --accent:#7C3A22;--accent-2:#B8762A;--accent-gold:#D4A857;--good:#3A5C30;
-  --dark:#070605;--dark-2:#0D0C0A;--dark-3:#161410;
-  --dark-line:rgba(245,244,242,0.09);--on-dark:#EDE8DF;
-  --on-dark-soft:#BCB3A8;--on-dark-muted:#78706A;
+  --bg:#0C0B09;--bg-2:#161310;--surface:#1E1B17;--ink:#EDE7DC;--ink-soft:#B8AD9C;
+  --muted:#68605A;--line:rgba(237,231,220,0.11);--line-soft:rgba(237,231,220,0.06);
+  --accent:#C07840;--accent-2:#E8A84A;--accent-gold:#F2D090;--good:#6A9060;
+  --dark:#030201;--dark-2:#070605;--dark-3:#0C0B09;
+  --dark-line:rgba(237,231,220,0.08);--on-dark:#EDE7DC;
+  --on-dark-soft:#B8AD9C;--on-dark-muted:#68605A;
   --r:10px;--container:1180px;--ease:cubic-bezier(.22,.61,.36,1);
 }
 *{box-sizing:border-box}
@@ -42,7 +42,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .reveal.in{opacity:1;transform:none}
 
 /* NAV */
-.nav{position:sticky;top:0;z-index:60;background:rgba(245,244,242,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{position:sticky;top:0;z-index:60;background:rgba(12,11,9,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-inner{max-width:var(--container);margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:baseline;gap:.5ch;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.18rem;letter-spacing:.02em}
 .brand .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;transform:translateY(-1px)}
@@ -76,7 +76,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 /* METHOD PICK GRID */
 .mpick{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .mlink{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;text-decoration:none;color:inherit;transition:transform .25s var(--ease),box-shadow .25s,border-color .2s;cursor:pointer}
-.mlink:not(.mlink--disabled):hover{transform:translateY(-4px);box-shadow:0 24px 44px -28px rgba(10,9,8,0.4);border-color:var(--ink)}
+.mlink:not(.mlink--disabled):hover{transform:translateY(-4px);box-shadow:0 0 40px -8px rgba(192,120,64,0.2),0 4px 24px -8px rgba(0,0,0,0.7);border-color:var(--ink)}
 .mlink--disabled{opacity:.55;cursor:default}
 .mlink-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
 .mlink-type{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
@@ -155,6 +155,16 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;o
 .mlink-badge{animation:floatBadge 3.5s ease-in-out infinite}
 .lf{transition:transform .22s var(--ease),box-shadow .22s}
 .lf:hover{transform:translateY(-3px);box-shadow:0 8px 24px -10px rgba(0,0,0,0.18)}
+
+.hero-art{position:absolute;right:clamp(-60px,-6vw,0px);top:50%;transform:translateY(-60%);width:clamp(180px,22vw,280px);pointer-events:none;opacity:.75}
+.hero-art svg{width:100%;height:auto}
+@keyframes hac-steam{0%{opacity:0;transform:translateY(5px) scaleX(1)}25%{opacity:.85}85%{opacity:.2}100%{opacity:0;transform:translateY(-38px) scaleX(1.7)}}
+@keyframes hac-float{0%,100%{transform:translateY(-60%)}50%{transform:translateY(calc(-60% - 12px))}}
+.hac-s1{animation:hac-steam 3s ease-in-out infinite}
+.hac-s2{animation:hac-steam 3s ease-in-out 1s infinite}
+.hac-s3{animation:hac-steam 3s ease-in-out 2s infinite}
+.hero-art{animation:hac-float 7s ease-in-out infinite}
+@media(max-width:700px){.hero-art{display:none}}
 </style>
 </head>
 <body>
@@ -186,6 +196,21 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;o
         <a href="#methods" class="primary">Choose a method ↓</a>
         <a href="groundwork-brewlab.html" class="ghost">Open the Brew Lab</a>
       </div>
+      <div class="hero-art" aria-hidden="true">
+  <svg viewBox="0 0 160 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="80" cy="168" rx="52" ry="10" stroke="rgba(192,120,64,0.3)" stroke-width="1.5"/>
+    <path d="M34 108 Q30 158 46 166 L114 166 Q130 158 126 108 Z" stroke="rgba(192,120,64,0.5)" stroke-width="1.5" fill="rgba(30,27,23,0.5)"/>
+    <ellipse cx="80" cy="108" rx="46" ry="9" stroke="rgba(192,120,64,0.45)" stroke-width="1.5"/>
+    <ellipse cx="80" cy="110" rx="38" ry="6" fill="rgba(160,90,40,0.18)" stroke="rgba(232,168,74,0.25)" stroke-width="1"/>
+    <path d="M126 118 Q158 118 158 138 Q158 158 126 158" stroke="rgba(192,120,64,0.4)" stroke-width="1.5"/>
+    <line x1="34" y1="118" x2="34" y2="162" stroke="rgba(255,255,255,0.04)" stroke-width="5"/>
+    <path class="hac-s1" d="M60 94 C56 82 64 70 60 58" stroke="rgba(242,208,144,0.7)" stroke-width="2" stroke-linecap="round"/>
+    <path class="hac-s2" d="M80 88 C84 74 76 60 80 46" stroke="rgba(242,208,144,0.6)" stroke-width="2" stroke-linecap="round"/>
+    <path class="hac-s3" d="M100 94 C104 80 96 66 100 52" stroke="rgba(242,208,144,0.65)" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="80" cy="110" r="28" stroke="rgba(232,168,74,0.06)" stroke-width="1" stroke-dasharray="5 7"/>
+    <circle cx="80" cy="110" r="40" stroke="rgba(232,168,74,0.04)" stroke-width="1" stroke-dasharray="3 9"/>
+  </svg>
+</div>
     </div>
   </div>
 </section>

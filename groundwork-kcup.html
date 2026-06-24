@@ -9,12 +9,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F5F4F2;--bg-2:#ECEAE7;--surface:#FFFFFF;--ink:#0A0908;--ink-soft:#2E2820;
-  --muted:#8A837C;--line:rgba(10,9,8,0.09);--line-soft:rgba(10,9,8,0.04);
-  --accent:#7C3A22;--accent-2:#B8762A;--accent-gold:#D4A857;--good:#3A5C30;
-  --dark:#070605;--dark-2:#0D0C0A;--dark-3:#161410;
-  --dark-line:rgba(245,244,242,0.09);--on-dark:#EDE8DF;
-  --on-dark-soft:#BCB3A8;--on-dark-muted:#78706A;
+  --bg:#0C0B09;--bg-2:#161310;--surface:#1E1B17;--ink:#EDE7DC;--ink-soft:#B8AD9C;
+  --muted:#68605A;--line:rgba(237,231,220,0.11);--line-soft:rgba(237,231,220,0.06);
+  --accent:#C07840;--accent-2:#E8A84A;--accent-gold:#F2D090;--good:#6A9060;
+  --dark:#030201;--dark-2:#070605;--dark-3:#0C0B09;
+  --dark-line:rgba(237,231,220,0.08);--on-dark:#EDE7DC;
+  --on-dark-soft:#B8AD9C;--on-dark-muted:#68605A;
   --r:10px;--container:1180px;--ease:cubic-bezier(.22,.61,.36,1);
 }
 *{box-sizing:border-box}
@@ -39,7 +39,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .reveal.in{opacity:1;transform:none}
 
 /* NAV */
-.nav{position:sticky;top:0;z-index:60;background:rgba(245,244,242,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{position:sticky;top:0;z-index:60;background:rgba(12,11,9,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-inner{max-width:var(--container);margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:baseline;gap:.5ch;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.18rem;letter-spacing:.02em}
 .brand .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;transform:translateY(-1px)}
@@ -140,6 +140,18 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
 }
+
+.hero-kcup-art{position:absolute;right:clamp(-40px,-4vw,10px);top:50%;transform:translateY(-52%);width:clamp(140px,17vw,220px);pointer-events:none;opacity:.78}
+.hero-kcup-art svg{width:100%;height:auto}
+@keyframes hkc-stream{0%,10%{stroke-dashoffset:82;opacity:0}20%{opacity:1}80%{stroke-dashoffset:0;opacity:.95}94%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes hkc-steam{0%{opacity:0;transform:translateY(5px)}26%{opacity:.75}92%{opacity:0;transform:translateY(-30px) scaleX(1.5)}}
+@keyframes hkc-float{0%,100%{transform:translateY(-52%)}50%{transform:translateY(calc(-52% - 10px))}}
+.hkc-stream{animation:hkc-stream 3.4s ease-in-out infinite}
+.hkc-s1{animation:hkc-steam 2.6s ease-in-out infinite}
+.hkc-s2{animation:hkc-steam 2.6s ease-in-out .85s infinite}
+.hkc-s3{animation:hkc-steam 2.6s ease-in-out 1.7s infinite}
+.hero-kcup-art{animation:hkc-float 7s ease-in-out infinite}
+@media(max-width:700px){.hero-kcup-art{display:none}}
 </style>
 </head>
 <body>
@@ -189,6 +201,22 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
           </div>
         </div>
       </div>
+      <div class="hero-kcup-art" aria-hidden="true">
+  <svg viewBox="0 0 140 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M34 38 Q30 80 42 100 L98 100 Q110 80 106 38 Z" stroke="rgba(232,168,74,0.55)" stroke-width="1.5" fill="rgba(24,20,16,0.55)"/>
+    <ellipse cx="70" cy="38" rx="36" ry="9" stroke="rgba(232,168,74,0.6)" stroke-width="1.5" fill="rgba(32,28,22,0.7)"/>
+    <circle cx="70" cy="38" r="5" fill="rgba(192,120,64,0.45)" stroke="rgba(232,168,74,0.55)" stroke-width="1"/>
+    <path class="hkc-stream" d="M70 100 Q70 148 70 178" stroke="rgba(130,70,25,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="82" stroke-dashoffset="82"/>
+    <path class="hkc-s1" d="M54 32 C50 20 58 8 54 -4" stroke="rgba(242,208,144,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+    <path class="hkc-s2" d="M70 28 C74 16 66 4 70 -8" stroke="rgba(242,208,144,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+    <path class="hkc-s3" d="M86 32 C90 20 82 8 86 -4" stroke="rgba(242,208,144,0.55)" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M32 178 Q28 210 38 218 L102 218 Q112 210 108 178 Z" stroke="rgba(192,120,64,0.5)" stroke-width="1.5" fill="rgba(18,15,12,0.5)"/>
+    <path d="M108 188 Q128 188 128 198 Q128 208 108 208" stroke="rgba(192,120,64,0.4)" stroke-width="1.5"/>
+    <ellipse cx="70" cy="220" rx="46" ry="9" stroke="rgba(192,120,64,0.25)" stroke-width="1.2"/>
+    <ellipse cx="70" cy="180" rx="28" ry="5" fill="rgba(110,60,20,0.2)" stroke="rgba(192,120,64,0.2)" stroke-width="1"/>
+    <line x1="40" y1="186" x2="40" y2="214" stroke="rgba(255,255,255,0.04)" stroke-width="5"/>
+  </svg>
+</div>
     </div>
   </div>
 </section>

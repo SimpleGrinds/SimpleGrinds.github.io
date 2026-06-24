@@ -9,12 +9,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F5F4F2;--bg-2:#ECEAE7;--surface:#FFFFFF;--ink:#0A0908;--ink-soft:#2E2820;
-  --muted:#8A837C;--line:rgba(10,9,8,0.09);--line-soft:rgba(10,9,8,0.04);
-  --accent:#7C3A22;--accent-2:#B8762A;--accent-gold:#D4A857;--good:#3A5C30;
-  --dark:#070605;--dark-2:#0D0C0A;--dark-3:#161410;
-  --dark-line:rgba(245,244,242,0.09);--on-dark:#EDE8DF;
-  --on-dark-soft:#BCB3A8;--on-dark-muted:#78706A;
+  --bg:#0C0B09;--bg-2:#161310;--surface:#1E1B17;--ink:#EDE7DC;--ink-soft:#B8AD9C;
+  --muted:#68605A;--line:rgba(237,231,220,0.11);--line-soft:rgba(237,231,220,0.06);
+  --accent:#C07840;--accent-2:#E8A84A;--accent-gold:#F2D090;--good:#6A9060;
+  --dark:#030201;--dark-2:#070605;--dark-3:#0C0B09;
+  --dark-line:rgba(237,231,220,0.08);--on-dark:#EDE7DC;
+  --on-dark-soft:#B8AD9C;--on-dark-muted:#68605A;
   --r:10px;--container:1180px;--ease:cubic-bezier(.22,.61,.36,1);
 }
 *{box-sizing:border-box}
@@ -39,7 +39,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .reveal.in{opacity:1;transform:none}
 
 /* NAV */
-.nav{position:sticky;top:0;z-index:60;background:rgba(245,244,242,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{position:sticky;top:0;z-index:60;background:rgba(12,11,9,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-inner{max-width:var(--container);margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:baseline;gap:.5ch;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.18rem;letter-spacing:.02em}
 .brand .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;transform:translateY(-1px)}
@@ -142,6 +142,20 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
 }
+
+.hero-press{position:absolute;right:clamp(-40px,-4vw,10px);top:50%;transform:translateY(-52%);width:clamp(140px,18vw,220px);pointer-events:none;opacity:.78}
+.hero-press svg{width:100%;height:auto}
+@keyframes hfp-press{0%,12%{transform:translateY(0)}52%,74%{transform:translateY(86px)}90%,100%{transform:translateY(0)}}
+@keyframes hfp-rise{0%,12%{transform:scaleY(1);transform-origin:bottom center}52%,74%{transform:scaleY(1.55);transform-origin:bottom center}90%,100%{transform:scaleY(1);transform-origin:bottom center}}
+@keyframes hfp-steam{0%{opacity:0;transform:translateY(5px)}28%{opacity:.8}92%{opacity:0;transform:translateY(-32px) scaleX(1.5)}}
+@keyframes hfp-float{0%,100%{transform:translateY(-52%)}50%{transform:translateY(calc(-52% - 10px))}}
+.hfp-plunger{animation:hfp-press 4.5s var(--ease) infinite}
+.hfp-coffee{animation:hfp-rise 4.5s var(--ease) infinite;transform-box:fill-box}
+.hfp-s1{animation:hfp-steam 2.8s ease-in-out infinite}
+.hfp-s2{animation:hfp-steam 2.8s ease-in-out .9s infinite}
+.hfp-s3{animation:hfp-steam 2.8s ease-in-out 1.8s infinite}
+.hero-press{animation:hfp-float 7s ease-in-out infinite}
+@media(max-width:700px){.hero-press{display:none}}
 </style>
 </head>
 <body>
@@ -191,6 +205,26 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
           </div>
         </div>
       </div>
+      <div class="hero-press" aria-hidden="true">
+  <svg viewBox="0 0 120 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="20" y="84" width="80" height="140" rx="5" stroke="rgba(232,168,74,0.5)" stroke-width="1.5" fill="rgba(18,15,12,0.5)"/>
+    <rect class="hfp-coffee" x="21" y="178" width="78" height="45" rx="3" fill="rgba(70,35,15,0.7)"/>
+    <rect x="12" y="74" width="96" height="14" rx="7" stroke="rgba(232,168,74,0.6)" stroke-width="1.5" fill="rgba(28,24,20,0.7)"/>
+    <g class="hfp-plunger">
+      <rect x="56" y="8" width="8" height="68" rx="4" stroke="rgba(232,168,74,0.5)" stroke-width="1" fill="rgba(28,24,20,0.8)"/>
+      <ellipse cx="60" cy="10" rx="16" ry="8" stroke="rgba(232,168,74,0.6)" stroke-width="1.5" fill="rgba(28,24,20,0.7)"/>
+      <rect x="22" y="174" width="76" height="6" rx="3" stroke="rgba(232,168,74,0.5)" stroke-width="1" fill="rgba(40,28,18,0.9)"/>
+      <line x1="32" y1="177" x2="88" y2="177" stroke="rgba(232,168,74,0.2)" stroke-width="1"/>
+      <line x1="60" y1="174" x2="60" y2="180" stroke="rgba(232,168,74,0.2)" stroke-width="1"/>
+    </g>
+    <path d="M20 114 Q2 114 2 134 Q2 154 20 154" stroke="rgba(232,168,74,0.4)" stroke-width="1.5"/>
+    <path d="M100 114 Q118 114 118 134 Q118 154 100 154" stroke="rgba(232,168,74,0.4)" stroke-width="1.5"/>
+    <line x1="28" y1="90" x2="28" y2="220" stroke="rgba(255,255,255,0.045)" stroke-width="6"/>
+    <path class="hfp-s1" d="M46 72 C42 60 50 48 46 36" stroke="rgba(242,208,144,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+    <path class="hfp-s2" d="M60 70 C64 57 56 44 60 31" stroke="rgba(242,208,144,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+    <path class="hfp-s3" d="M74 72 C78 59 70 46 74 33" stroke="rgba(242,208,144,0.55)" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+</div>
     </div>
   </div>
 </section>

@@ -9,12 +9,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F5F4F2;--bg-2:#ECEAE7;--surface:#FFFFFF;--ink:#0A0908;--ink-soft:#2E2820;
-  --muted:#8A837C;--line:rgba(10,9,8,0.09);--line-soft:rgba(10,9,8,0.04);
-  --accent:#7C3A22;--accent-2:#B8762A;--accent-gold:#D4A857;--good:#3A5C30;
-  --dark:#070605;--dark-2:#0D0C0A;--dark-3:#161410;
-  --dark-line:rgba(245,244,242,0.09);--on-dark:#EDE8DF;
-  --on-dark-soft:#BCB3A8;--on-dark-muted:#78706A;
+  --bg:#0C0B09;--bg-2:#161310;--surface:#1E1B17;--ink:#EDE7DC;--ink-soft:#B8AD9C;
+  --muted:#68605A;--line:rgba(237,231,220,0.11);--line-soft:rgba(237,231,220,0.06);
+  --accent:#C07840;--accent-2:#E8A84A;--accent-gold:#F2D090;--good:#6A9060;
+  --dark:#030201;--dark-2:#070605;--dark-3:#0C0B09;
+  --dark-line:rgba(237,231,220,0.08);--on-dark:#EDE7DC;
+  --on-dark-soft:#B8AD9C;--on-dark-muted:#68605A;
   --r:10px;--container:1180px;--ease:cubic-bezier(.22,.61,.36,1);
 }
 *{box-sizing:border-box}
@@ -41,7 +41,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .reveal.in{opacity:1;transform:none}
 
 /* NAV */
-.nav{position:sticky;top:0;z-index:60;background:rgba(245,244,242,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{position:sticky;top:0;z-index:60;background:rgba(12,11,9,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-inner{max-width:var(--container);margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:baseline;gap:.5ch;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.18rem;letter-spacing:.02em}
 .brand .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;transform:translateY(-1px)}
@@ -148,6 +148,18 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
 }
+
+.hero-espresso{position:absolute;right:clamp(-40px,-4vw,10px);top:50%;transform:translateY(-54%);width:clamp(150px,18vw,240px);pointer-events:none;opacity:.8}
+.hero-espresso svg{width:100%;height:auto}
+@keyframes hesp-stream{0%,6%{stroke-dashoffset:90;opacity:0}16%{opacity:1}76%{stroke-dashoffset:0;opacity:1}92%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes hesp-crema{0%,40%{r:6;opacity:.15}65%{r:12;opacity:.4}100%{r:6;opacity:.15}}
+@keyframes hesp-float{0%,100%{transform:translateY(-54%)}50%{transform:translateY(calc(-54% - 10px))}}
+.hesp-sl{animation:hesp-stream 3.2s ease-in-out infinite}
+.hesp-sr{animation:hesp-stream 3.2s ease-in-out .28s infinite}
+.hesp-crema{animation:hesp-crema 3.2s ease-in-out 1.5s infinite}
+.hesp-crema2{animation:hesp-crema 3.2s ease-in-out 1.8s infinite}
+.hero-espresso{animation:hesp-float 7s ease-in-out infinite}
+@media(max-width:700px){.hero-espresso{display:none}}
 </style>
 </head>
 <body>
@@ -197,6 +209,24 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
           </div>
         </div>
       </div>
+      <div class="hero-espresso" aria-hidden="true">
+  <svg viewBox="0 0 160 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="42" y="18" width="76" height="30" rx="6" stroke="rgba(232,168,74,0.6)" stroke-width="1.5" fill="rgba(24,20,16,0.6)"/>
+    <path d="M42 44 Q80 58 118 44" stroke="rgba(232,168,74,0.4)" stroke-width="1.5"/>
+    <path d="M42 30 Q14 30 10 48 Q8 62 16 68 L36 70" stroke="rgba(232,168,74,0.5)" stroke-width="1.5"/>
+    <path d="M118 30 Q146 30 150 48 Q152 62 144 68 L124 70" stroke="rgba(232,168,74,0.5)" stroke-width="1.5"/>
+    <path class="hesp-sl" d="M64 54 Q60 95 58 138" stroke="rgba(140,75,30,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="90" stroke-dashoffset="90"/>
+    <path class="hesp-sr" d="M96 54 Q100 95 102 138" stroke="rgba(140,75,30,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="90" stroke-dashoffset="90"/>
+    <path d="M28 138 Q24 172 34 180 L82 180 Q92 172 88 138 Z" stroke="rgba(232,168,74,0.5)" stroke-width="1.5" fill="rgba(18,15,12,0.55)"/>
+    <path d="M72 138 Q68 172 78 180 L126 180 Q136 172 132 138 Z" stroke="rgba(232,168,74,0.5)" stroke-width="1.5" fill="rgba(18,15,12,0.55)"/>
+    <ellipse cx="58" cy="182" rx="36" ry="7" stroke="rgba(192,120,64,0.28)" stroke-width="1.2"/>
+    <ellipse cx="102" cy="182" rx="36" ry="7" stroke="rgba(192,120,64,0.28)" stroke-width="1.2"/>
+    <ellipse cx="58" cy="140" rx="24" ry="5" fill="rgba(130,65,25,0.25)" stroke="rgba(200,130,50,0.3)" stroke-width="1"/>
+    <ellipse cx="102" cy="140" rx="24" ry="5" fill="rgba(130,65,25,0.25)" stroke="rgba(200,130,50,0.3)" stroke-width="1"/>
+    <circle class="hesp-crema" cx="58" cy="140" r="8" fill="rgba(200,140,60,0.12)" stroke="rgba(200,140,60,0.2)" stroke-width="1"/>
+    <circle class="hesp-crema2" cx="102" cy="140" r="8" fill="rgba(200,140,60,0.12)" stroke="rgba(200,140,60,0.2)" stroke-width="1"/>
+  </svg>
+</div>
     </div>
   </div>
 </section>
